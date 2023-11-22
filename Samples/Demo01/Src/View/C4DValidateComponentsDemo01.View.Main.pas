@@ -33,12 +33,12 @@ type
     edtCodigo: TEdit;
 
     [NotEmpty]
-    [Length(2, 5)]
-    //'Texto deve ter entre <min> e <max> caracteres'
+    [Length(5, 10)] //'Texto deve ter entre <min> e <max> caracteres'
     edtNome: TEdit;
 
+
     [NotEmpty]
-    [MinMaxValue(5, 50)]
+    [MinMaxValue(5, 10)]
     edtLimite: TEdit;
 
     [NotEmpty]
@@ -50,10 +50,12 @@ type
     [NotEmpty]
     edtTesteComAbas: TEdit;
 
+    [NotEmpty]
+    Memo1: TMemo;
+
     ckAtivo: TCheckBox;
     pnBotoes: TPanel;
     btnValidar: TButton;
-    Memo1: TMemo;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     Edit2: TEdit;
@@ -65,7 +67,9 @@ type
     Panel1: TPanel;
     GroupBox1: TGroupBox;
     Label5: TLabel;
+    btnClearAllFields: TButton;
     procedure btnValidarClick(Sender: TObject);
+    procedure btnClearAllFieldsClick(Sender: TObject);
   private
   public
   end;
@@ -77,6 +81,26 @@ implementation
 
 {$R *.dfm}
 
+procedure TC4DValidateComponentsDemo01ViewMain.btnClearAllFieldsClick(Sender: TObject);
+var
+  i: Integer;
+  LComponent: TComponent;
+begin
+  for i := 0 to Pred(Self.ComponentCount) do
+  begin
+    LComponent := Self.Components[i];
+    if(LComponent is TEdit)then
+      TEdit(LComponent).Clear
+    else if(LComponent is TComboBox)then
+      TComboBox(LComponent).ItemIndex := -1
+    else if(LComponent is TCheckBox)then
+      TCheckBox(LComponent).Checked := False
+    else if(LComponent is TRadioGroup)then
+      TRadioGroup(LComponent).ItemIndex := -1
+    else if(LComponent is TMemo)then
+      TMemo(LComponent).Lines.Clear
+  end;
+end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.btnValidarClick(Sender: TObject);
 var
@@ -84,7 +108,6 @@ var
   LRttiType: TRttiType;
   LRttiField: TRttiField;
   LCustomAttribute: TCustomAttribute;
-  LComponent: TComponent;
 begin
   LRttiContext := TRttiContext.Create;
   try

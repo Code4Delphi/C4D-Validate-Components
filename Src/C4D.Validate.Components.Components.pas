@@ -24,16 +24,28 @@ implementation
 class function TC4DValidateComponentsComponents.GetTextFromComponent(const AComponent: TComponent): string;
 begin
   Result := '';
-  if(AComponent is TEdit)then
-    Result := Trim((AComponent as TEdit).Text)
-  else if(AComponent is TComboBox)then
-    Result := Trim((AComponent as TComboBox).Text)
-  else if(AComponent is TMemo)then
-    Result := Trim((AComponent as TMemo).Text)
-  else if(AComponent is TRadioGroup)then
-  begin
-    if(TRadioGroup(AComponent).ItemIndex >= 0)then
-      Result := TRadioGroup(AComponent).Items[TRadioGroup(AComponent).ItemIndex];
+  try
+    if(AComponent is TEdit)then
+      Exit(TEdit(AComponent).Text);
+
+    if(AComponent is TComboBox)then
+      Exit(TComboBox(AComponent).Text);
+
+    if(AComponent is TMemo)then
+      Exit(TMemo(AComponent).Text);
+
+    if(AComponent is TRadioGroup)then
+    begin
+      if(TRadioGroup(AComponent).ItemIndex >= 0)then
+        Result := TRadioGroup(AComponent).Items[TRadioGroup(AComponent).ItemIndex];
+
+      Exit;
+    end;
+
+    if(AComponent is TDateTimePicker)then
+      Exit(FloatToStr(TDateTimePicker(AComponent).Date));
+  finally
+    Result := Result.Trim;
   end;
 end;
 

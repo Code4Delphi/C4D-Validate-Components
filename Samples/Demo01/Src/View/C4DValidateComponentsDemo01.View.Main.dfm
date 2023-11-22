@@ -2,7 +2,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
   Left = 0
   Top = 0
   Caption = 'C4D-validate-components - Demo01'
-  ClientHeight = 533
+  ClientHeight = 588
   ClientWidth = 662
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,17 +17,19 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
     Left = 0
     Top = 0
     Width = 662
-    Height = 533
+    Height = 588
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitHeight = 533
     object pnTopo: TPanel
       Left = 0
       Top = 0
       Width = 662
-      Height = 488
+      Height = 543
       Align = alClient
       TabOrder = 0
+      ExplicitHeight = 488
       object Label1: TLabel
         Left = 24
         Top = 11
@@ -115,7 +117,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       end
       object Memo1: TMemo
         Left = 24
-        Top = 247
+        Top = 262
         Width = 601
         Height = 34
         ScrollBars = ssVertical
@@ -130,10 +132,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
         TabOrder = 7
         object TabSheet1: TTabSheet
           Caption = 'TabSheet1'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Edit2: TEdit
             Left = 32
             Top = 32
@@ -150,15 +148,11 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
             Top = 0
             Width = 545
             Height = 103
-            ActivePage = TabSheet4
+            ActivePage = TabSheet3
             Align = alClient
             TabOrder = 0
             object TabSheet3: TTabSheet
               Caption = 'TabSheet3'
-              ExplicitLeft = 0
-              ExplicitTop = 0
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object Edit1: TEdit
                 Left = 32
                 Top = 32
@@ -212,10 +206,19 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           end
         end
       end
+      object btnClearAllFields: TButton
+        Left = 28
+        Top = 489
+        Width = 75
+        Height = 25
+        Caption = 'Clear all fields'
+        TabOrder = 8
+        OnClick = btnClearAllFieldsClick
+      end
     end
     object pnBotoes: TPanel
       Left = 0
-      Top = 488
+      Top = 543
       Width = 662
       Height = 45
       Align = alBottom
@@ -224,6 +227,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       Padding.Right = 3
       Padding.Bottom = 3
       TabOrder = 1
+      ExplicitTop = 488
       object btnValidar: TButton
         Left = 4
         Top = 4
@@ -233,6 +237,8 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
         Caption = 'Validar'
         TabOrder = 0
         OnClick = btnValidarClick
+        ExplicitLeft = 0
+        ExplicitTop = 6
       end
     end
   end
