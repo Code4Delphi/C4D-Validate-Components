@@ -64,7 +64,7 @@ begin
   if(LValue < FMinValue)or((FMaxValue > 0)and(LValue > FMaxValue))then
   begin
     TC4DValidateComponentsComponents.SetFocu(LComponent);
-    raise Exception.Create(Self.GetMsg + ARttiField.GetFieldDisplay);
+    raise Exception.Create(ARttiField.FormatMsg(Self.GetMsg));
   end;
 end;
 
