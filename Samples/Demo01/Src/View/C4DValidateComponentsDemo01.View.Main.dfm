@@ -11,6 +11,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object pnTudo: TPanel

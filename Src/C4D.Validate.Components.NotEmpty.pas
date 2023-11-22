@@ -5,8 +5,7 @@ interface
 uses
   System.SysUtils,
   System.Classes,
-  System.RTTI,
-  C4D.Validate.Components.Components;
+  System.RTTI;
 
 type
   NotEmpty = class(TCustomAttribute)
@@ -19,6 +18,10 @@ type
   end;
 
 implementation
+
+uses
+  C4D.Validate.Components.Helpers,
+  C4D.Validate.Components.Components;
 
 const
   MSG_PADRAO = 'Campo obrigatório sem preenchimento';
@@ -44,7 +47,8 @@ begin
   if(LText.Trim.IsEmpty)then
   begin
     TC4DValidateComponentsComponents.SetFocu(LComponent);
-    raise Exception.Create(FMsg);
+    //raise Exception.Create(FMsg + ARttiField.GetFieldDisplay);
+    raise Exception.Create(ARttiField.FormatMsg(FMsg));
   end;
 end;
 

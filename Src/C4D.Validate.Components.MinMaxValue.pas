@@ -5,8 +5,7 @@ interface
 uses
   System.SysUtils,
   System.Classes,
-  System.RTTI,
-  C4D.Validate.Components.Components;
+  System.RTTI;
 
 type
   MinMaxValue = class(TCustomAttribute)
@@ -21,6 +20,10 @@ type
   end;
 
 implementation
+
+uses
+  C4D.Validate.Components.Helpers,
+  C4D.Validate.Components.Components;
 
 const
   MSG_PADRAO = 'Campo deve ter um valor entre <min> e <max>';
@@ -61,7 +64,7 @@ begin
   if(LValue < FMinValue)or((FMaxValue > 0)and(LValue > FMaxValue))then
   begin
     TC4DValidateComponentsComponents.SetFocu(LComponent);
-    raise Exception.Create(Self.GetMsg);
+    raise Exception.Create(Self.GetMsg + ARttiField.GetFieldDisplay);
   end;
 end;
 

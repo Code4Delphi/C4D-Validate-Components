@@ -7,7 +7,9 @@ uses
   C4D.Validate.Components.NotEmpty in '..\..\Src\C4D.Validate.Components.NotEmpty.pas',
   C4D.Validate.Components.Length in '..\..\Src\C4D.Validate.Components.Length.pas',
   C4D.Validate.Components.MinMaxValue in '..\..\Src\C4D.Validate.Components.MinMaxValue.pas',
-  C4D.Validate.Components in '..\..\Src\C4D.Validate.Components.pas';
+  C4D.Validate.Components in '..\..\Src\C4D.Validate.Components.pas',
+  C4D.Validate.Components.FieldDisplay in '..\..\Src\C4D.Validate.Components.FieldDisplay.pas',
+  C4D.Validate.Components.Helpers in '..\..\Src\C4D.Validate.Components.Helpers.pas';
 
 {$R *.res}
 

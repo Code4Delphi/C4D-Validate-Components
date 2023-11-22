@@ -107,6 +107,8 @@
         <DCCReference Include="..\..\Src\C4D.Validate.Components.Length.pas"/>
         <DCCReference Include="..\..\Src\C4D.Validate.Components.MinMaxValue.pas"/>
         <DCCReference Include="..\..\Src\C4D.Validate.Components.pas"/>
+        <DCCReference Include="..\..\Src\C4D.Validate.Components.FieldDisplay.pas"/>
+        <DCCReference Include="..\..\Src\C4D.Validate.Components.Helpers.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

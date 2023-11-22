@@ -5,8 +5,7 @@ interface
 uses
   System.SysUtils,
   System.Classes,
-  System.RTTI,
-  C4D.Validate.Components.Components;
+  System.RTTI;
 
 type
   Length = class(TCustomAttribute)
@@ -21,6 +20,10 @@ type
   end;
 
 implementation
+
+uses
+  C4D.Validate.Components.Helpers,
+  C4D.Validate.Components.Components;
 
 const
   MSG_PADRAO = 'Campo deve ter entre <min> e <max> caracteres';
@@ -61,7 +64,7 @@ begin
   if(LLength < FMinLength)or((FMaxLength > 0)and(LLength > FMaxLength))then
   begin
     TC4DValidateComponentsComponents.SetFocu(LComponent);
-    raise Exception.Create(Self.GetMsg);
+    raise Exception.Create(ARttiField.FormatMsg(Self.GetMsg));
   end;
 end;
 

@@ -14,11 +14,12 @@ uses
   Vcl.Dialogs,
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
+  Vcl.ComCtrls,
   System.RTTI,
   C4D.Validate.Components.NotEmpty,
   C4D.Validate.Components.Length,
   C4D.Validate.Components.MinMaxValue,
-  Vcl.ComCtrls;
+  C4D.Validate.Components.FieldDisplay;
 
 type
   TC4DValidateComponentsDemo01ViewMain = class(TForm)
@@ -29,13 +30,14 @@ type
     Label3: TLabel;
     Label4: TLabel;
 
-    [NotEmpty]
+    [FieldDisplay('Código')]
+    [NotEmpty('Campo <FieldDisplay> não pode ficar vazio')]
     edtCodigo: TEdit;
 
+    [FieldDisplay('Nome')]
     [NotEmpty]
     [Length(5, 10)] //'Texto deve ter entre <min> e <max> caracteres'
     edtNome: TEdit;
-
 
     [NotEmpty]
     [MinMaxValue(5, 10)]
