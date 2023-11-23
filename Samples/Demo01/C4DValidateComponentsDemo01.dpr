@@ -10,7 +10,12 @@ uses
   C4D.Validate.Components in '..\..\Src\C4D.Validate.Components.pas',
   C4D.Validate.Components.FieldDisplay in '..\..\Src\C4D.Validate.Components.FieldDisplay.pas',
   C4D.Validate.Components.Helpers in '..\..\Src\C4D.Validate.Components.Helpers.pas',
-  C4D.ValidateComponents.Demo01.Utils in 'Src\Utils\C4D.ValidateComponents.Demo01.Utils.pas';
+  C4D.ValidateComponents.Demo01.Utils in 'Src\Utils\C4D.ValidateComponents.Demo01.Utils.pas',
+  C4D.Validate.Components.MinMaxDate in '..\..\Src\C4D.Validate.Components.MinMaxDate.pas',
+  C4D.Validate.Components.Consts in '..\..\Src\C4D.Validate.Components.Consts.pas',
+  C4D.Validate.Components.Language in '..\..\Src\C4D.Validate.Components.Language.pas',
+  C4D.Validate.Components.Config in '..\..\Src\C4D.Validate.Components.Config.pas',
+  C4D.Validate.Components.Types in '..\..\Src\C4D.Validate.Components.Types.pas';
 
 {$R *.res}
 

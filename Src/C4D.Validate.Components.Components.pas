@@ -22,6 +22,9 @@ type
 
 implementation
 
+uses
+  C4D.Validate.Components.Language;
+
 class function TC4DValidateComponentsComponents.GetTextFromComponent(const AComponent: TComponent): string;
 begin
   Result := '';
@@ -44,7 +47,7 @@ begin
     end;
 
     if(AComponent is TDateTimePicker)then
-      Exit(FloatToStr(TDateTimePicker(AComponent).Date));
+      Exit(DateToStr(TDateTimePicker(AComponent).Date));
 
     //DBWARE
     if(AComponent is TDBEdit)then
@@ -64,7 +67,7 @@ begin
       Exit;
     end;
 
-    raise Exception.Create('Componente não suportado pelo C4D.Validate.Components');
+    raise Exception.Create(TLanguage.ComponentNotSuported + ' [' + AComponent.Name + ']');
   finally
     Result := Result.Trim;
   end;

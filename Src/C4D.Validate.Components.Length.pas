@@ -23,12 +23,9 @@ implementation
 
 uses
   C4D.Validate.Components.Helpers,
-  C4D.Validate.Components.Components;
-
-const
-  MSG_PADRAO = 'Campo deve ter entre <min> e <max> caracteres';
-  MSG_PADRAO_MIN = 'Campo deve ter ao menos <min> caracteres';
-  MSG_PADARO_MAX = 'Campo deve ter no máximo <max> caracteres';
+  C4D.Validate.Components.Components,
+  C4D.Validate.Components.Consts,
+  C4D.Validate.Components.Language;
 
 constructor Length.Create(const AMinLength, AMaxLength: Integer; const AMsg: string = '');
 begin
@@ -38,18 +35,18 @@ begin
   if(not AMsg.Trim.IsEmpty)then
     FMsg := AMsg.Trim
   else if(FMinLength > 0)and(FMaxLength > 0)then
-    FMsg := MSG_PADRAO
+    FMsg := TLanguage.MsgDefaultLength
   else if(FMinLength > 0)then
-    FMsg := MSG_PADRAO_MIN
+    FMsg := TLanguage.MsgDefaultLengthMin
   else if(FMaxLength > 0)then
-    FMsg := MSG_PADARO_MAX;
+    FMsg := TLanguage.MsgDefaultLengthMax;
 end;
 
 function Length.GetMsg: string;
 begin
   Result := FMsg
-    .Replace('<min>', FMinLength.ToString, [rfReplaceAll, rfIgnoreCase])
-    .Replace('<max>', FMaxLength.ToString, [rfReplaceAll, rfIgnoreCase]);
+    .Replace(TAG_MIN, FMinLength.ToString, [rfReplaceAll, rfIgnoreCase])
+    .Replace(TAG_MAX, FMaxLength.ToString, [rfReplaceAll, rfIgnoreCase]);
 end;
 
 procedure Length.Validar(const ARttiField: TRttiField; const AObject: TObject);

@@ -23,12 +23,9 @@ implementation
 
 uses
   C4D.Validate.Components.Helpers,
-  C4D.Validate.Components.Components;
-
-const
-  MSG_PADRAO = 'Campo deve ter um valor entre <min> e <max>';
-  MSG_PADRAO_MIN = 'Campo deve ter um valor mínimo de <min>';
-  MSG_PADARO_MAX = 'Campo deve ter um valor máximo de <max>';
+  C4D.Validate.Components.Components,
+  C4D.Validate.Components.Consts,
+  C4D.Validate.Components.Language;
 
 constructor MinMaxValue.Create(const AMinValue, AMaxValue: Integer; const AMsg: string = '');
 begin
@@ -38,18 +35,18 @@ begin
   if(not AMsg.Trim.IsEmpty)then
     FMsg := AMsg.Trim
   else if(FMinValue > 0)and(FMaxValue > 0)then
-    FMsg := MSG_PADRAO
+    FMsg := TLanguage.MsgDefaultValue
   else if(FMinValue > 0)then
-    FMsg := MSG_PADRAO_MIN
+    FMsg := TLanguage.MsgDefaultValueMin
   else if(FMaxValue > 0)then
-    FMsg := MSG_PADARO_MAX;
+    FMsg := TLanguage.MsgDefaultValueMax;
 end;
 
 function MinMaxValue.GetMsg: string;
 begin
   Result := FMsg
-    .Replace('<min>', FMinValue.ToString, [rfReplaceAll, rfIgnoreCase])
-    .Replace('<max>', FMaxValue.ToString, [rfReplaceAll, rfIgnoreCase]);
+    .Replace(TAG_MIN, FMinValue.ToString, [rfReplaceAll, rfIgnoreCase])
+    .Replace(TAG_MAX, FMaxValue.ToString, [rfReplaceAll, rfIgnoreCase]);
 end;
 
 procedure MinMaxValue.Validar(const ARttiField: TRttiField; const AObject: TObject);

@@ -7,24 +7,35 @@ uses
   System.Classes,
   System.RTTI,
   Vcl.Forms,
+  C4D.Validate.Components.Types,
+  C4D.Validate.Components.Config,
+  C4D.Validate.Components.FieldDisplay,
   C4D.Validate.Components.NotEmpty,
   C4D.Validate.Components.Length,
   C4D.Validate.Components.MinMaxValue,
-  C4D.Validate.Components.FieldDisplay;
+  C4D.Validate.Components.MinMaxDate;
 
 type
+  TLanguageDefault = C4D.Validate.Components.Types.TLanguageDefault;
+  FieldDisplay = C4D.Validate.Components.FieldDisplay.FieldDisplay;
   NotEmpty = C4D.Validate.Components.NotEmpty.NotEmpty;
   Length = C4D.Validate.Components.Length.Length;
   MinMaxValue = C4D.Validate.Components.MinMaxValue.MinMaxValue;
-  FieldDisplay = C4D.Validate.Components.FieldDisplay.FieldDisplay;
+  MinMaxDate = C4D.Validate.Components.MinMaxDate.MinMaxDate;
 
   TC4DValidateComponents = class
   private
   public
+    class function Config: TC4DValidateComponentsConfig;
     class procedure Validate(AInstanceClass: TComponentClass; const AForm: TForm);
   end;
 
 implementation
+
+class function TC4DValidateComponents.Config: TC4DValidateComponentsConfig;
+begin
+  Result := TC4DValidateComponentsConfig.GetInstance;
+end;
 
 class procedure TC4DValidateComponents.Validate(AInstanceClass: TComponentClass; const AForm: TForm);
 var
@@ -52,6 +63,9 @@ begin
 
         if(LCustomAttribute is MinMaxValue)then
           MinMaxValue(LCustomAttribute).Validar(LRttiField, AForm);
+
+        if(LCustomAttribute is MinMaxDate)then
+          MinMaxDate(LCustomAttribute).Validar(LRttiField, AForm);
       end;
     end;
   finally

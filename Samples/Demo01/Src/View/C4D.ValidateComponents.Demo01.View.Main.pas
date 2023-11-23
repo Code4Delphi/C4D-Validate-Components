@@ -25,8 +25,8 @@ uses
 
 type
   TC4DValidateComponentsDemo01ViewMain = class(TForm)
-    pnTudo: TPanel;
-    pnTopo: TPanel;
+    pnBackAll: TPanel;
+    pnDemoBack: TPanel;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -60,6 +60,7 @@ type
     Memo1: TMemo;
 
     [NotEmpty]
+    [MinMaxDate('01/12/2023', '10/12/2023')]
     DateTimePicker1: TDateTimePicker;
 
     //DBWARE
@@ -82,10 +83,9 @@ type
 
     [NotEmpty]
     DBMemo1: TDBMemo;
-
-    ckCheck: TCheckBox;
-    pnBotoes: TPanel;
+    pnButtons: TPanel;
     btnValidar: TButton;
+    [NotEmpty]
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     Edit2: TEdit;
@@ -115,9 +115,18 @@ type
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
+    PageControl3: TPageControl;
+    tabDemo: TTabSheet;
+    tabConfig: TTabSheet;
+    pnConfigBack: TPanel;
+    Label13: TLabel;
+    ckConfigDisplayComponentNameIfNotFieldDisplay: TCheckBox;
+    cBoxConfigLanguage: TComboBox;
+    bntConfigSave: TButton;
     procedure btnValidarClick(Sender: TObject);
     procedure btnClearAllFieldsClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure bntConfigSaveClick(Sender: TObject);
   private
   public
   end;
@@ -132,6 +141,14 @@ implementation
 procedure TC4DValidateComponentsDemo01ViewMain.FormCreate(Sender: TObject);
 begin
   ReportMemoryLeaksOnShutdown := True;
+end;
+
+procedure TC4DValidateComponentsDemo01ViewMain.bntConfigSaveClick(Sender: TObject);
+begin
+  TC4DValidateComponents
+    .Config
+    .Language(TLanguageDefault(cBoxConfigLanguage.ItemIndex))
+    .DisplayComponentNameIfNotFieldDisplay(ckConfigDisplayComponentNameIfNotFieldDisplay.Checked);
 end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.btnClearAllFieldsClick(Sender: TObject);

@@ -21,14 +21,12 @@ implementation
 
 uses
   C4D.Validate.Components.Helpers,
-  C4D.Validate.Components.Components;
-
-const
-  MSG_PADRAO = 'Campo obrigatório sem preenchimento';
+  C4D.Validate.Components.Components,
+  C4D.Validate.Components.Language;
 
 constructor NotEmpty.Create;
 begin
-  FMsg := MSG_PADRAO;
+  FMsg := TLanguage.MsgDefaultNotEmpty;
 end;
 
 constructor NotEmpty.Create(const AMsg: string);
@@ -47,7 +45,6 @@ begin
   if(LText.Trim.IsEmpty)then
   begin
     TC4DValidateComponentsComponents.SetFocu(LComponent);
-    //raise Exception.Create(FMsg + ARttiField.GetFieldDisplay);
     raise Exception.Create(ARttiField.FormatMsg(FMsg));
   end;
 end;
