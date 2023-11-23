@@ -11,7 +11,8 @@ uses
   Vcl.Dialogs,
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
-  Vcl.ComCtrls;
+  Vcl.ComCtrls,
+  Vcl.DBCtrls;
 
 type
   TUtils = class
@@ -31,14 +32,23 @@ begin
     LComponent := AForm.Components[i];
     if(LComponent is TEdit)then
       TEdit(LComponent).Clear
-    else if(LComponent is TComboBox)then
-      TComboBox(LComponent).ItemIndex := -1
-    else if(LComponent is TCheckBox)then
-      TCheckBox(LComponent).Checked := False
-    else if(LComponent is TRadioGroup)then
-      TRadioGroup(LComponent).ItemIndex := -1
     else if(LComponent is TMemo)then
       TMemo(LComponent).Lines.Clear
+    else if(LComponent is TComboBox)then
+      TComboBox(LComponent).ItemIndex := -1
+    else if(LComponent is TRadioGroup)then
+      TRadioGroup(LComponent).ItemIndex := -1
+    else if(LComponent is TCheckBox)then
+      TCheckBox(LComponent).Checked := False
+    //DBWARE
+    else if(LComponent is TDBEdit)then
+      TDBEdit(LComponent).Field.Clear
+    else if(LComponent is TDBMemo)then
+      TDBMemo(LComponent).Field.Clear
+    else if(LComponent is TDBComboBox)then
+      TDBComboBox(LComponent).Field.Clear
+    else if(LComponent is TDBRadioGroup)then
+      TDBRadioGroup(LComponent).Field.Clear;
   end;
 end;
 

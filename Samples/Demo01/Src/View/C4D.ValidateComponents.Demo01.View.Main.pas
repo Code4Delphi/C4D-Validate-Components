@@ -1,10 +1,11 @@
 unit C4D.ValidateComponents.Demo01.View.Main;
 
+{$WARN UNKNOWN_CUSTOM_ATTRIBUTE ERROR}
+
 interface
 
 uses
   Winapi.Windows,
-
   System.SysUtils,
   System.Variants,
   System.Classes,
@@ -15,6 +16,10 @@ uses
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
   Vcl.ComCtrls,
+  Vcl.DBCtrls,
+  Data.DB,
+  Vcl.Mask,
+  Datasnap.DBClient,
   C4D.ValidateComponents.Demo01.Utils,
   C4D.Validate.Components;
 
@@ -33,16 +38,18 @@ type
 
     [FieldDisplay('Nome')]
     [NotEmpty]
-    [Length(5, 10)]
+    [Length(5, 20)]
     edtName: TEdit;
 
     [NotEmpty]
     [MinMaxValue(5, 10)]
     edtLimit: TEdit;
 
+    [FieldDisplay('Type')]
     [NotEmpty]
     cBoxType: TComboBox;
 
+    [FieldDisplay('Type Person')]
     [NotEmpty]
     rdGroupTypePerson: TRadioGroup;
 
@@ -51,6 +58,30 @@ type
 
     [NotEmpty]
     Memo1: TMemo;
+
+    [NotEmpty]
+    DateTimePicker1: TDateTimePicker;
+
+    //DBWARE
+    [NotEmpty]
+    edtDBCode: TDBEdit;
+
+    [NotEmpty]
+    edtDBName: TDBEdit;
+
+    [NotEmpty]
+    edtDBLimit: TDBEdit;
+
+    [FieldDisplay('Type')]
+    [NotEmpty]
+    cBoxDBType: TDBComboBox;
+
+    [FieldDisplay('Type Person')]
+    [NotEmpty]
+    rdGroupDBTypePerson: TDBRadioGroup;
+
+    [NotEmpty]
+    DBMemo1: TDBMemo;
 
     ckCheck: TCheckBox;
     pnBotoes: TPanel;
@@ -66,10 +97,27 @@ type
     Panel1: TPanel;
     GroupBox1: TGroupBox;
     Label5: TLabel;
-    btnClearAllFields: TButton;
     Label6: TLabel;
+    GroupBox2: TGroupBox;
+    btnClearAllFields: TButton;
+    ClientDataSet1: TClientDataSet;
+    ClientDataSet1Id: TIntegerField;
+    ClientDataSet1Name: TStringField;
+    ClientDataSet1TypePerson: TIntegerField;
+    ClientDataSet1Observation: TStringField;
+    ClientDataSet1Limit: TFloatField;
+    ClientDataSet1Check: TStringField;
+    ClientDataSet1Type: TStringField;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    DataSource1: TDataSource;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
     procedure btnValidarClick(Sender: TObject);
     procedure btnClearAllFieldsClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
   public
   end;
@@ -80,6 +128,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TC4DValidateComponentsDemo01ViewMain.FormCreate(Sender: TObject);
+begin
+  ReportMemoryLeaksOnShutdown := True;
+end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.btnClearAllFieldsClick(Sender: TObject);
 begin
