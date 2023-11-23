@@ -16,10 +16,7 @@ uses
   Vcl.ExtCtrls,
   Vcl.ComCtrls,
   System.RTTI,
-  C4D.Validate.Components.NotEmpty,
-  C4D.Validate.Components.Length,
-  C4D.Validate.Components.MinMaxValue,
-  C4D.Validate.Components.FieldDisplay;
+  C4D.Validate.Components;
 
 type
   TC4DValidateComponentsDemo01ViewMain = class(TForm)
@@ -54,6 +51,7 @@ type
 
     [NotEmpty]
     Memo1: TMemo;
+
     ckCheck: TCheckBox;
     pnBotoes: TPanel;
     btnValidar: TButton;
@@ -105,35 +103,9 @@ begin
 end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.btnValidarClick(Sender: TObject);
-var
-  LRttiContext: TRttiContext;
-  LRttiType: TRttiType;
-  LRttiField: TRttiField;
-  LCustomAttribute: TCustomAttribute;
 begin
-  LRttiContext := TRttiContext.Create;
-  try
-    LRttiType := LRttiContext.GetType(TC4DValidateComponentsDemo01ViewMain);
-
-    for LRttiField in LRttiType.GetFields do
-    begin
-      for LCustomAttribute in LRttiField.GetAttributes do
-      begin
-        if(LCustomAttribute is NotEmpty)then
-          NotEmpty(LCustomAttribute).Validar(LRttiField, Self);
-
-        if(LCustomAttribute is Length)then
-          Length(LCustomAttribute).Validar(LRttiField, Self);
-
-        if(LCustomAttribute is MinMaxValue)then
-          MinMaxValue(LCustomAttribute).Validar(LRttiField, Self);
-      end;
-    end;
-  finally
-    LRttiContext.Free;
-  end;
-
-  ShowMeSsage('SUCESSO')
+  TC4DValidateComponents.Validate(TC4DValidateComponentsDemo01ViewMain, Self);
+  ShowMeSsage('SUCESSO');
 end;
 
 end.
