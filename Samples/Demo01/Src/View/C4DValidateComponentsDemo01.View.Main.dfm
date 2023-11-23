@@ -22,7 +22,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitHeight = 533
     object pnTopo: TPanel
       Left = 0
       Top = 0
@@ -30,36 +29,43 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       Height = 543
       Align = alClient
       TabOrder = 0
-      ExplicitHeight = 488
+      ExplicitTop = -2
       object Label1: TLabel
         Left = 24
         Top = 11
-        Width = 33
+        Width = 60
         Height = 13
-        Caption = 'C'#243'digo'
+        Caption = 'Code (TEdit)'
       end
       object Label2: TLabel
         Left = 24
         Top = 51
-        Width = 27
+        Width = 62
         Height = 13
-        Caption = 'Nome'
+        Caption = 'Name (TEdit)'
       end
       object Label3: TLabel
         Left = 24
         Top = 91
-        Width = 43
+        Width = 65
         Height = 13
-        Caption = 'Limite R$'
+        Caption = 'Limit $ (TEdit)'
       end
       object Label4: TLabel
         Left = 24
-        Top = 133
-        Width = 20
+        Top = 134
+        Width = 92
         Height = 13
-        Caption = 'Tipo'
+        Caption = 'Type (TComboBox)'
       end
-      object edtCodigo: TEdit
+      object Label6: TLabel
+        Left = 24
+        Top = 258
+        Width = 104
+        Height = 13
+        Caption = 'Observation (TMemo)'
+      end
+      object edtCode: TEdit
         Left = 24
         Top = 27
         Width = 601
@@ -67,7 +73,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
         TabOrder = 0
         Text = '10'
       end
-      object edtNome: TEdit
+      object edtName: TEdit
         Left = 24
         Top = 67
         Width = 601
@@ -75,7 +81,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
         TabOrder = 1
         Text = 'C'#233'sar Cardoso'
       end
-      object edtLimite: TEdit
+      object edtLimit: TEdit
         Left = 24
         Top = 106
         Width = 601
@@ -83,7 +89,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
         TabOrder = 2
         Text = '10,00'
       end
-      object cBoxTipoJuridico: TComboBox
+      object cBoxType: TComboBox
         Left = 24
         Top = 152
         Width = 601
@@ -94,31 +100,31 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           'Pessoa F'#237'sica'
           'Pessoa Jur'#237'dica')
       end
-      object ckAtivo: TCheckBox
+      object ckCheck: TCheckBox
         Left = 24
         Top = 179
         Width = 97
         Height = 17
-        Caption = 'Ativo'
+        Caption = 'TCheckBox'
         Checked = True
         State = cbChecked
         TabOrder = 4
       end
-      object rdGroupSexo: TRadioGroup
+      object rdGroupTypePerson: TRadioGroup
         Left = 24
         Top = 202
         Width = 265
         Height = 39
-        Caption = ' Sexo '
+        Caption = ' Type person (TRadioGroup) '
         Columns = 2
         Items.Strings = (
-          'Masculino'
-          'Feminino')
+          'Client'
+          'Provider')
         TabOrder = 5
       end
       object Memo1: TMemo
         Left = 24
-        Top = 262
+        Top = 276
         Width = 601
         Height = 34
         ScrollBars = ssVertical
@@ -149,7 +155,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
             Top = 0
             Width = 545
             Height = 103
-            ActivePage = TabSheet3
+            ActivePage = TabSheet4
             Align = alClient
             TabOrder = 0
             object TabSheet3: TTabSheet
@@ -183,10 +189,10 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
                   TabOrder = 0
                   object Label5: TLabel
                     Left = 11
-                    Top = 16
-                    Width = 89
+                    Top = 15
+                    Width = 121
                     Height = 13
-                    Caption = 'Teste com abas'
+                    Caption = 'Test with tabs (TEdit)'
                     Font.Charset = DEFAULT_CHARSET
                     Font.Color = clWindowText
                     Font.Height = -11
@@ -194,7 +200,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
                     Font.Style = [fsBold]
                     ParentFont = False
                   end
-                  object edtTesteComAbas: TEdit
+                  object edtTestWithTabs: TEdit
                     Left = 11
                     Top = 32
                     Width = 345
@@ -228,18 +234,15 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       Padding.Right = 3
       Padding.Bottom = 3
       TabOrder = 1
-      ExplicitTop = 488
       object btnValidar: TButton
         Left = 4
         Top = 4
         Width = 168
         Height = 37
         Align = alLeft
-        Caption = 'Validar'
+        Caption = 'Validate'
         TabOrder = 0
         OnClick = btnValidarClick
-        ExplicitLeft = 0
-        ExplicitTop = 6
       end
     end
   end

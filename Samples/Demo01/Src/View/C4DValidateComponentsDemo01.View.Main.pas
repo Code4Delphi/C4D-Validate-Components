@@ -32,30 +32,29 @@ type
 
     [FieldDisplay('Código')]
     [NotEmpty('Campo <FieldDisplay> não pode ficar vazio')]
-    edtCodigo: TEdit;
+    edtCode: TEdit;
 
     [FieldDisplay('Nome')]
     [NotEmpty]
-    [Length(5, 10)] //'Texto deve ter entre <min> e <max> caracteres'
-    edtNome: TEdit;
+    [Length(5, 10)]
+    edtName: TEdit;
 
     [NotEmpty]
     [MinMaxValue(5, 10)]
-    edtLimite: TEdit;
+    edtLimit: TEdit;
 
     [NotEmpty]
-    cBoxTipoJuridico: TComboBox;
+    cBoxType: TComboBox;
 
     [NotEmpty]
-    rdGroupSexo: TRadioGroup;
+    rdGroupTypePerson: TRadioGroup;
 
     [NotEmpty]
-    edtTesteComAbas: TEdit;
+    edtTestWithTabs: TEdit;
 
     [NotEmpty]
     Memo1: TMemo;
-
-    ckAtivo: TCheckBox;
+    ckCheck: TCheckBox;
     pnBotoes: TPanel;
     btnValidar: TButton;
     PageControl1: TPageControl;
@@ -70,6 +69,7 @@ type
     GroupBox1: TGroupBox;
     Label5: TLabel;
     btnClearAllFields: TButton;
+    Label6: TLabel;
     procedure btnValidarClick(Sender: TObject);
     procedure btnClearAllFieldsClick(Sender: TObject);
   private
