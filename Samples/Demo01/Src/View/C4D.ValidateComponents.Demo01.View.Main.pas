@@ -1,10 +1,10 @@
-unit C4DValidateComponentsDemo01.View.Main;
+unit C4D.ValidateComponents.Demo01.View.Main;
 
 interface
 
 uses
   Winapi.Windows,
-  Winapi.Messages,
+
   System.SysUtils,
   System.Variants,
   System.Classes,
@@ -15,7 +15,7 @@ uses
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
   Vcl.ComCtrls,
-  System.RTTI,
+  C4D.ValidateComponents.Demo01.Utils,
   C4D.Validate.Components;
 
 type
@@ -82,24 +82,8 @@ implementation
 {$R *.dfm}
 
 procedure TC4DValidateComponentsDemo01ViewMain.btnClearAllFieldsClick(Sender: TObject);
-var
-  i: Integer;
-  LComponent: TComponent;
 begin
-  for i := 0 to Pred(Self.ComponentCount) do
-  begin
-    LComponent := Self.Components[i];
-    if(LComponent is TEdit)then
-      TEdit(LComponent).Clear
-    else if(LComponent is TComboBox)then
-      TComboBox(LComponent).ItemIndex := -1
-    else if(LComponent is TCheckBox)then
-      TCheckBox(LComponent).Checked := False
-    else if(LComponent is TRadioGroup)then
-      TRadioGroup(LComponent).ItemIndex := -1
-    else if(LComponent is TMemo)then
-      TMemo(LComponent).Lines.Clear
-  end;
+  TUtils.ClearAllFieldsForm(Self);
 end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.btnValidarClick(Sender: TObject);

@@ -4,8 +4,7 @@ interface
 
 uses
   System.SysUtils,
-  System.RTTI,
-  System.TypInfo;
+  System.RTTI;
 
 type
   TRttiFieldyHelper = class helper for TRttiField
