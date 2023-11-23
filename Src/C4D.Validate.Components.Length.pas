@@ -15,7 +15,10 @@ type
     FMsg: string;
     function GetMsg: string;
   public
-    constructor Create(const AMinLength, AMaxLength: Integer; const AMsg: string = '');
+    constructor Create(const AMinLength: Integer); overload;
+    constructor Create(const AMinLength, AMaxLength: Integer); overload;
+    constructor Create(const AMinLength: Integer; const AMsg: string); overload;
+    constructor Create(const AMinLength, AMaxLength: Integer; const AMsg: string); overload;
     procedure Validar(const ARttiField: TRttiField; const AObject: TObject);
   end;
 
@@ -27,7 +30,22 @@ uses
   C4D.Validate.Components.Consts,
   C4D.Validate.Components.Language;
 
-constructor Length.Create(const AMinLength, AMaxLength: Integer; const AMsg: string = '');
+constructor Length.Create(const AMinLength: Integer);
+begin
+  Self.Create(AMinLength, 0, '');
+end;
+
+constructor Length.Create(const AMinLength, AMaxLength: Integer);
+begin
+  Self.Create(AMinLength, AMaxLength, '');
+end;
+
+constructor Length.Create(const AMinLength: Integer; const AMsg: string);
+begin
+  Self.Create(AMinLength, 0, AMsg);
+end;
+
+constructor Length.Create(const AMinLength, AMaxLength: Integer; const AMsg: string);
 begin
   FMinLength := AMinLength;
   FMaxLength := AMaxLength;

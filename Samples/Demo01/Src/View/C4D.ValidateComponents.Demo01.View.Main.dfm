@@ -2,7 +2,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
   Left = 0
   Top = 0
   Caption = 'C4D-validate-components - Demo01'
-  ClientHeight = 610
+  ClientHeight = 570
   ClientWidth = 643
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,7 +19,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
     Left = 0
     Top = 0
     Width = 643
-    Height = 610
+    Height = 570
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
@@ -27,7 +27,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
     ExplicitHeight = 588
     object pnButtons: TPanel
       Left = 0
-      Top = 565
+      Top = 525
       Width = 643
       Height = 45
       Align = alBottom
@@ -64,11 +64,12 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       Left = 0
       Top = 0
       Width = 643
-      Height = 565
+      Height = 525
       ActivePage = tabDemo
       Align = alClient
       TabOrder = 1
       ExplicitTop = -2
+      ExplicitHeight = 565
       object tabDemo: TTabSheet
         Caption = 'Demo'
         ExplicitLeft = 0
@@ -79,9 +80,10 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           Left = 0
           Top = 0
           Width = 635
-          Height = 537
+          Height = 497
           Align = alClient
           TabOrder = 0
+          ExplicitHeight = 537
           object Label1: TLabel
             Left = 16
             Top = 8
@@ -271,7 +273,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           end
           object GroupBox2: TGroupBox
             Left = 1
-            Top = 352
+            Top = 312
             Width = 633
             Height = 184
             Align = alBottom
@@ -283,6 +285,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
             Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 7
+            ExplicitTop = 352
             object Label7: TLabel
               Left = 15
               Top = 19
@@ -485,12 +488,13 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           Left = 0
           Top = 0
           Width = 635
-          Height = 537
+          Height = 497
           Align = alClient
           BevelOuter = bvNone
           ParentBackground = False
           TabOrder = 0
           ExplicitTop = -2
+          ExplicitHeight = 537
           object Label13: TLabel
             Left = 16
             Top = 16

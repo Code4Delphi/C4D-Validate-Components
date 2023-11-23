@@ -15,7 +15,9 @@ type
     FMsg: string;
     function GetMsg: string;
   public
-    constructor Create(const AMinDate, AMaxDate: string; const AMsg: string = '');
+    constructor Create(const AMinDate: string); overload;
+    constructor Create(const AMinDate, AMaxDate: string); overload;
+    constructor Create(const AMinDate, AMaxDate, AMsg: string); overload;
     procedure Validar(const ARttiField: TRttiField; const AObject: TObject);
   end;
 
@@ -27,7 +29,17 @@ uses
   C4D.Validate.Components.Consts,
   C4D.Validate.Components.Language;
 
-constructor MinMaxDate.Create(const AMinDate, AMaxDate: string; const AMsg: string = '');
+constructor MinMaxDate.Create(const AMinDate: string);
+begin
+  Self.Create(AMinDate, '', '');
+end;
+
+constructor MinMaxDate.Create(const AMinDate, AMaxDate: string);
+begin
+  Self.Create('', AMaxDate, '');
+end;
+
+constructor MinMaxDate.Create(const AMinDate, AMaxDate, AMsg: string);
 begin
   FMinDate := StrToDateDef(AMinDate, 0);
   FMaxDate := StrToDateDef(AMaxDate, 0);

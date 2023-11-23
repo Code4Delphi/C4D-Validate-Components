@@ -38,10 +38,9 @@ type
 
     [FieldDisplay('Nome')]
     [NotEmpty]
-    [Length(5, 20)]
+    [Length(5, 15)]
     edtName: TEdit;
 
-    [NotEmpty]
     [MinMaxValue(5, 10)]
     edtLimit: TEdit;
 

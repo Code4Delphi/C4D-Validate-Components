@@ -15,7 +15,10 @@ type
     FMsg: string;
     function GetMsg: string;
   public
-    constructor Create(const AMinValue, AMaxValue: Integer; const AMsg: string = '');
+    constructor Create(const AMinValue: Integer); overload;
+    constructor Create(const AMinValue, AMaxValue: Integer); overload;
+    constructor Create(const AMinValue: Integer; const AMsg: string); overload;
+    constructor Create(const AMinValue, AMaxValue: Integer; const AMsg: string); overload;
     procedure Validar(const ARttiField: TRttiField; const AObject: TObject);
   end;
 
@@ -27,7 +30,22 @@ uses
   C4D.Validate.Components.Consts,
   C4D.Validate.Components.Language;
 
-constructor MinMaxValue.Create(const AMinValue, AMaxValue: Integer; const AMsg: string = '');
+constructor MinMaxValue.Create(const AMinValue: Integer);
+begin
+  Self.Create(AMinValue, 0, '');
+end;
+
+constructor MinMaxValue.Create(const AMinValue, AMaxValue: Integer);
+begin
+  Self.Create(AMinValue, AMaxValue, '');
+end;
+
+constructor MinMaxValue.Create(const AMinValue: Integer; const AMsg: string);
+begin
+  Self.Create(AMinValue, 0, AMsg);
+end;
+
+constructor MinMaxValue.Create(const AMinValue, AMaxValue: Integer; const AMsg: string);
 begin
   FMinValue := AMinValue;
   FMaxValue := AMaxValue;
