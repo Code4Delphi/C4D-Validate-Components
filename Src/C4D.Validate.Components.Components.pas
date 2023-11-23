@@ -67,7 +67,7 @@ begin
       Exit;
     end;
 
-    raise Exception.Create(TLanguage.ComponentNotSuported + ' [' + AComponent.Name + ']');
+    raise Exception.Create(TLanguage.ComponentNotSuported + Format(' [%s]', [ AComponent.Name]));
   finally
     Result := Result.Trim;
   end;
