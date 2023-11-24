@@ -28,7 +28,8 @@ uses
   C4D.Validate.Components.Helpers,
   C4D.Validate.Components.Components,
   C4D.Validate.Components.Consts,
-  C4D.Validate.Components.Language;
+  C4D.Validate.Components.Language,
+  C4D.Validate.Components.Errors;
 
 constructor Length.Create(const AMinLength: Integer);
 begin
@@ -77,10 +78,7 @@ begin
   LText := TC4DValidateComponentsComponents.GetTextFromComponent(LComponent);
   LLength := LText.Length;
   if(LLength < FMinLength)or((FMaxLength > 0)and(LLength > FMaxLength))then
-  begin
-    TC4DValidateComponentsComponents.SetFocu(LComponent);
-    raise Exception.Create(ARttiField.FormatMsg(Self.GetMsg));
-  end;
+    TErros.GetInstance.Add(LComponent.Name, ARttiField.FormatMsg(Self.GetMsg));
 end;
 
 end.

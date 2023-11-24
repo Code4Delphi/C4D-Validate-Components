@@ -22,7 +22,8 @@ implementation
 uses
   C4D.Validate.Components.Helpers,
   C4D.Validate.Components.Components,
-  C4D.Validate.Components.Language;
+  C4D.Validate.Components.Language,
+  C4D.Validate.Components.Errors;
 
 constructor NotEmpty.Create;
 begin
@@ -43,10 +44,7 @@ begin
   LText := TC4DValidateComponentsComponents.GetTextFromComponent(LComponent);
 
   if(LText.Trim.IsEmpty)then
-  begin
-    TC4DValidateComponentsComponents.SetFocu(LComponent);
-    raise Exception.Create(ARttiField.FormatMsg(FMsg));
-  end;
+    TErros.GetInstance.Add(LComponent.Name, ARttiField.FormatMsg(FMsg));
 end;
 
 end.

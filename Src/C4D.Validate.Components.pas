@@ -7,8 +7,8 @@ uses
   System.Classes,
   System.RTTI,
   Vcl.Forms,
-  C4D.Validate.Components.Types,
   C4D.Validate.Components.Config,
+  C4D.Validate.Components.Types,
   C4D.Validate.Components.FieldDisplay,
   C4D.Validate.Components.NotEmpty,
   C4D.Validate.Components.Length,
@@ -32,6 +32,10 @@ type
 
 implementation
 
+uses
+  C4D.Validate.Components.Errors,
+  C4D.Validate.Components.SetFocus;
+
 class function TC4DValidateComponents.Config: TC4DValidateComponentsConfig;
 begin
   Result := TC4DValidateComponentsConfig.GetInstance;
@@ -44,6 +48,8 @@ var
   LRttiField: TRttiField;
   LCustomAttribute: TCustomAttribute;
 begin
+  TErros.GetInstance.Clear;
+
   LRttiContext := TRttiContext.Create;
   try
     LRttiType := LRttiContext.GetType(AInstanceClass);
@@ -71,6 +77,12 @@ begin
   finally
     LRttiContext.Free;
   end;
+
+  if(not TErros.GetInstance.HasErros)then
+    Exit;
+
+  TRttiSetFocus.SetFocusComponentName(AForm, TErros.GetInstance.GetNameFirstComponent);
+  raise Exception.Create(TErros.GetInstance.GetMessages);
 end;
 
 end.

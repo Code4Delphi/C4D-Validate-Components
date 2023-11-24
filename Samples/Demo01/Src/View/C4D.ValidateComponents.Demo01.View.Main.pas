@@ -84,7 +84,6 @@ type
     DBMemo1: TDBMemo;
     pnButtons: TPanel;
     btnValidar: TButton;
-    [NotEmpty]
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     Edit2: TEdit;
@@ -144,6 +143,7 @@ end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.bntConfigSaveClick(Sender: TObject);
 begin
+  //OPTIONAL CONFIGURATION
   TC4DValidateComponents
     .Config
     .Language(TLanguageDefault(cBoxConfigLanguage.ItemIndex))

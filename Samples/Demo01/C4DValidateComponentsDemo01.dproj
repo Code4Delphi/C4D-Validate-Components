@@ -115,6 +115,9 @@
         <DCCReference Include="..\..\Src\C4D.Validate.Components.Language.pas"/>
         <DCCReference Include="..\..\Src\C4D.Validate.Components.Config.pas"/>
         <DCCReference Include="..\..\Src\C4D.Validate.Components.Types.pas"/>
+        <DCCReference Include="..\..\Src\C4D.Validate.Components.Errors.pas"/>
+        <DCCReference Include="..\..\Src\C4D.Validate.Components.ListPair.pas"/>
+        <DCCReference Include="..\..\Src\C4D.Validate.Components.SetFocus.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

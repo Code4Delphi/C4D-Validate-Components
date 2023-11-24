@@ -15,7 +15,10 @@ uses
   C4D.Validate.Components.Consts in '..\..\Src\C4D.Validate.Components.Consts.pas',
   C4D.Validate.Components.Language in '..\..\Src\C4D.Validate.Components.Language.pas',
   C4D.Validate.Components.Config in '..\..\Src\C4D.Validate.Components.Config.pas',
-  C4D.Validate.Components.Types in '..\..\Src\C4D.Validate.Components.Types.pas';
+  C4D.Validate.Components.Types in '..\..\Src\C4D.Validate.Components.Types.pas',
+  C4D.Validate.Components.Errors in '..\..\Src\C4D.Validate.Components.Errors.pas',
+  C4D.Validate.Components.ListPair in '..\..\Src\C4D.Validate.Components.ListPair.pas',
+  C4D.Validate.Components.SetFocus in '..\..\Src\C4D.Validate.Components.SetFocus.pas';
 
 {$R *.res}
 

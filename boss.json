@@ -1,0 +1,9 @@
+{
+	"name": "C4D Validate Components",
+	"description": "Framework for automatic validation of Delphi forms",
+	"version": "1.0.0",
+	"homepage": "https://github.com/Code4Delphi/C4D-Validate-Components",
+	"mainsrc": "Src/",
+	"projects": [],
+	"dependencies": {}
+}
