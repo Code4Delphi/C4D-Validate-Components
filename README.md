@@ -30,7 +30,7 @@ Utility for automatic validation of Delphi forms
 
 
 
-## ⚙️ Instalação
+## ⚙️ Installation
 
 * Installation using the [**Boss**](https://github.com/HashLoad/boss):
 
@@ -46,7 +46,7 @@ boss install github.com/Code4Delphi/C4D-Validate-Components
 
 
 
-## 🚀 Como usar
+## 🚀 Quickstart
 * Add uses to your system:
 ```
 uses
