@@ -60,7 +60,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       Top = 0
       Width = 643
       Height = 525
-      ActivePage = tabConfig
+      ActivePage = tabDemo
       Align = alClient
       TabOrder = 1
       object tabDemo: TTabSheet
@@ -476,7 +476,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           BevelOuter = bvNone
           ParentBackground = False
           TabOrder = 0
-          ExplicitTop = 2
           object Label13: TLabel
             Left = 16
             Top = 16
