@@ -139,6 +139,7 @@ implementation
 procedure TC4DValidateComponentsDemo01ViewMain.FormCreate(Sender: TObject);
 begin
   ReportMemoryLeaksOnShutdown := True;
+  ClientDataSet1.Edit;
 end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.bntConfigSaveClick(Sender: TObject);
@@ -158,7 +159,7 @@ end;
 procedure TC4DValidateComponentsDemo01ViewMain.btnValidarClick(Sender: TObject);
 begin
   TC4DValidateComponents.Validate(TC4DValidateComponentsDemo01ViewMain, Self);
-  ShowMeSsage('SUCESSO');
+  ShowMessage('SUCESSO');
 end;
 
 end.

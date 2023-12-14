@@ -23,8 +23,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 662
-    ExplicitHeight = 588
     object pnButtons: TPanel
       Left = 0
       Top = 525
@@ -36,8 +34,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       Padding.Right = 3
       Padding.Bottom = 3
       TabOrder = 0
-      ExplicitLeft = -1
-      ExplicitTop = 570
       object btnValidar: TButton
         Left = 153
         Top = 4
@@ -47,7 +43,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
         Caption = 'Validate'
         TabOrder = 0
         OnClick = btnValidarClick
-        ExplicitLeft = 159
       end
       object btnClearAllFields: TButton
         Left = 4
@@ -65,17 +60,11 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       Top = 0
       Width = 643
       Height = 525
-      ActivePage = tabDemo
+      ActivePage = tabConfig
       Align = alClient
       TabOrder = 1
-      ExplicitTop = -2
-      ExplicitHeight = 565
       object tabDemo: TTabSheet
         Caption = 'Demo'
-        ExplicitLeft = 0
-        ExplicitTop = 20
-        ExplicitWidth = 281
-        ExplicitHeight = 165
         object pnDemoBack: TPanel
           Left = 0
           Top = 0
@@ -83,7 +72,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           Height = 497
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 537
           object Label1: TLabel
             Left = 16
             Top = 8
@@ -285,7 +273,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
             Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 7
-            ExplicitTop = 352
             object Label7: TLabel
               Left = 15
               Top = 19
@@ -480,10 +467,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
       object tabConfig: TTabSheet
         Caption = 'Config (opcional)'
         ImageIndex = 1
-        ExplicitLeft = 0
-        ExplicitTop = 28
-        ExplicitWidth = 281
-        ExplicitHeight = 165
         object pnConfigBack: TPanel
           Left = 0
           Top = 0
@@ -493,8 +476,6 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           BevelOuter = bvNone
           ParentBackground = False
           TabOrder = 0
-          ExplicitTop = -2
-          ExplicitHeight = 537
           object Label13: TLabel
             Left = 16
             Top = 16
