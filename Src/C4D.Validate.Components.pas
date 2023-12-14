@@ -74,8 +74,8 @@ begin
           MinMaxDate(LCustomAttribute).Validar(LRttiField, AForm);
       end;
 
-      if(TErros.GetInstance.HasErros)and(True)then
-        Break
+      if(TErros.GetInstance.HasErros)and(Self.Config.ShowOneErrorAtATime)then
+        Break;
     end;
   finally
     LRttiContext.Free;

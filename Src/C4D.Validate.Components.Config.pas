@@ -11,6 +11,7 @@ type
   private
     FLanguage: TLanguageDefault;
     FDisplayComponentNameIfNotFieldDisplay: Boolean;
+    FShowOneErrorAtATime: Boolean;
     constructor Create;
   public
     class function GetInstance: TC4DValidateComponentsConfig;
@@ -18,6 +19,8 @@ type
     function Language(const Value: TLanguageDefault): TC4DValidateComponentsConfig; overload;
     function DisplayComponentNameIfNotFieldDisplay: Boolean; overload;
     function DisplayComponentNameIfNotFieldDisplay(const Value: Boolean): TC4DValidateComponentsConfig; overload;
+    function ShowOneErrorAtATime: Boolean; overload;
+    function ShowOneErrorAtATime(const Value: Boolean): TC4DValidateComponentsConfig; overload;
   end;
 
 implementation
@@ -29,6 +32,7 @@ constructor TC4DValidateComponentsConfig.Create;
 begin
   FLanguage := TLanguageDefault.ptBR;
   FDisplayComponentNameIfNotFieldDisplay := True;
+  FShowOneErrorAtATime := True;
 end;
 
 class function TC4DValidateComponentsConfig.GetInstance: TC4DValidateComponentsConfig;
@@ -58,6 +62,17 @@ function TC4DValidateComponentsConfig.DisplayComponentNameIfNotFieldDisplay(cons
 begin
   Result := Self;
   FDisplayComponentNameIfNotFieldDisplay := Value;
+end;
+
+function TC4DValidateComponentsConfig.ShowOneErrorAtATime: Boolean;
+begin
+  Result := FShowOneErrorAtATime;
+end;
+
+function TC4DValidateComponentsConfig.ShowOneErrorAtATime(const Value: Boolean): TC4DValidateComponentsConfig;
+begin
+  Result := Self;
+  FShowOneErrorAtATime := Value;
 end;
 
 initialization

@@ -121,6 +121,7 @@ type
     ckConfigDisplayComponentNameIfNotFieldDisplay: TCheckBox;
     cBoxConfigLanguage: TComboBox;
     bntConfigSave: TButton;
+    ckConfigShowOneErrorAtATime: TCheckBox;
     procedure btnValidarClick(Sender: TObject);
     procedure btnClearAllFieldsClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -148,7 +149,8 @@ begin
   TC4DValidateComponents
     .Config
     .Language(TLanguageDefault(cBoxConfigLanguage.ItemIndex))
-    .DisplayComponentNameIfNotFieldDisplay(ckConfigDisplayComponentNameIfNotFieldDisplay.Checked);
+    .DisplayComponentNameIfNotFieldDisplay(ckConfigDisplayComponentNameIfNotFieldDisplay.Checked)
+    .ShowOneErrorAtATime(ckConfigShowOneErrorAtATime.Checked);
 end;
 
 procedure TC4DValidateComponentsDemo01ViewMain.btnClearAllFieldsClick(Sender: TObject);

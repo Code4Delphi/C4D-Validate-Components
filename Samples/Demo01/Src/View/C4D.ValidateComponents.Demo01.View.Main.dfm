@@ -465,7 +465,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
         end
       end
       object tabConfig: TTabSheet
-        Caption = 'Config (opcional)'
+        Caption = 'Config (optional)'
         ImageIndex = 1
         object pnConfigBack: TPanel
           Left = 0
@@ -476,6 +476,7 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           BevelOuter = bvNone
           ParentBackground = False
           TabOrder = 0
+          ExplicitTop = 2
           object Label13: TLabel
             Left = 16
             Top = 16
@@ -485,13 +486,18 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           end
           object ckConfigDisplayComponentNameIfNotFieldDisplay: TCheckBox
             Left = 16
-            Top = 57
-            Width = 465
+            Top = 59
+            Width = 457
             Height = 17
+            Hint = 
+              'Exibir o nome do componente se o Custom Attribute FieldDisplay n' +
+              #227'o for informado (padr'#227'o Sim)'
             Caption = 
               'Display component name if FieldDisplay Custom Attributes are not' +
               ' provided (default True)'
             Checked = True
+            ParentShowHint = False
+            ShowHint = True
             State = cbChecked
             TabOrder = 0
           end
@@ -510,12 +516,25 @@ object C4DValidateComponentsDemo01ViewMain: TC4DValidateComponentsDemo01ViewMain
           end
           object bntConfigSave: TButton
             Left = 16
-            Top = 80
+            Top = 96
             Width = 113
             Height = 25
             Caption = 'Save'
             TabOrder = 2
             OnClick = bntConfigSaveClick
+          end
+          object ckConfigShowOneErrorAtATime: TCheckBox
+            Left = 16
+            Top = 75
+            Width = 217
+            Height = 17
+            Hint = 'Mostrar um erro por cada vez (padr'#227'o sim)'
+            Caption = 'Show one error at a time (default True)'
+            Checked = True
+            ParentShowHint = False
+            ShowHint = True
+            State = cbChecked
+            TabOrder = 3
           end
         end
       end

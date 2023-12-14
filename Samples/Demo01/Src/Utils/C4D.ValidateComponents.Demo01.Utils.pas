@@ -30,6 +30,11 @@ begin
   for i := 0 to Pred(AForm.ComponentCount) do
   begin
     LComponent := AForm.Components[i];
+
+    if(LComponent is TWinControl)then
+      if(TWinControl(LComponent).Parent.Name = 'pnConfigBack')then
+        Continue;
+
     if(LComponent is TEdit)then
       TEdit(LComponent).Clear
     else if(LComponent is TMemo)then
