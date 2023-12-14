@@ -36,7 +36,7 @@ type
     [NotEmpty('Campo <FieldDisplay> não pode ficar vazio')]
     edtCode: TEdit;
 
-    [FieldDisplay('Nome')]
+    [FieldDisplay('Name')]
     [NotEmpty]
     [Length(5, 15)]
     edtName: TEdit;
