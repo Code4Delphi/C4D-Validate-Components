@@ -4,7 +4,7 @@
     <img alt="Code4Delphi" height="100" src="https://github.com/Code4Delphi/Code4D-Wizard/blob/master/Images/c4d-logo-100x100.png">
   </a> 
 </p>
-Utility for automatic validation of Delphi forms
+Utility for automatic validation of Delphi forms. Excellent to be used for both new projects and legacy products. Facilitating form field validations and reducing code complexity. It can be used for both DBWare and non-DBWare components.
 
 
 
