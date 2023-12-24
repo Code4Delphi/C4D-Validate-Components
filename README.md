@@ -19,10 +19,6 @@ Utility for automatic validation of Delphi forms. Excellent to be used for both 
     <img src="https://img.shields.io/badge/E--mail-contato%40code4delphi.com.br-yellowgreen?logo=maildotru&logoColor=yellowgreen">
   </a>
    &nbsp;
-  <a href="https://go.hotmart.com/U81331747Y?dp=1" target="_blank">
-    <img src="https://img.shields.io/badge/Course:-Open%20Tools%20API-F00?logo=delphi">
-  </a> 
-   &nbsp;
   <a href="https://www.youtube.com/@code4delphi" target="_blank">
     <img src="https://img.shields.io/badge/YouTube:-Join%20Channel-red?logo=youtube&logoColor=red">
   </a> 
