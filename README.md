@@ -19,7 +19,7 @@ Utility for automatic validation of Delphi forms. Excellent to be used for both 
     <img src="https://img.shields.io/badge/YouTube:-Join%20Channel-red?logo=youtube&logoColor=red">
   </a> 
    &nbsp;
-  <a href="www.linkedin.com/in/cesar-cardoso-dev" target="_blank">
+  <a href="https://www.linkedin.com/in/cesar-cardoso-dev" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn:-Follow-blue?logo=LinkedIn&logoColor=blue">
   </a> 
   &nbsp;
