@@ -99,6 +99,18 @@ TC4DValidateComponents.Validate(TClasseDoForm, Self);
 C4D-Validate-Components\Samples\Demo01
 ```
 
+<br/>
+<br/>
+
+> [!TIP]
+> Starting with Delphi version 10.3, if you use a custom attribute that is not known to the compiler (because you typed it incorrectly or a unit is missing in the uses statement), you will receive a Warning:
+> ```
+> Warning: W1074 Unknown custom attribute
+> ```
+> It is recommended to transform this Warning into an error, so that correction is mandatory, to do so enter:
+> ```
+> {$WARN UNKNOWN_CUSTOM_ATTRIBUTE ERROR}
+> ```
 
 ‌
 # 💬 Contributions / Ideas / Bug Fixes
